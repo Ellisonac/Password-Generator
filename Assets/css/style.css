@@ -104,7 +104,7 @@ button[disabled] {
   float: right;
 }
 
-#password {
+.pass-text {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -163,6 +163,19 @@ button[disabled] {
   border: 2px solid black;
   z-index: 100;
   padding: 2px;
+}
+
+/* Adding class to show Error animation on invalid input */
+.error {
+  position: relative;
+  animation: shake .1s linear;
+  animation-iteration-count: 4;
+  box-shadow: 0px 0px 20px 5px inset red;
+}
+
+@keyframes shake {
+  0% { left: -5px; }
+  100% { right: -5px; }
 }
 
 @media (max-width: 768px) {

@@ -20,6 +20,7 @@
           <textarea
             readonly
             id="password"
+            class="pass-text"
             placeholder="Your Secure Password"
             aria-label="Generated Password"
           ></textarea>
@@ -37,15 +38,15 @@
         <h3>Included Characters</h3>
         <div id="types-form">
           <div data-chars="abcdefghijklmnopqrstuvwxyz">
-            <input type="checkbox" name="lowercase" id="lowercase">
+            <input type="checkbox" name="lowercase" id="lowercase" checked>
             <label for="lowercase">Lowercase</label>
           </div>
           <div data-chars="ABCDEFGHIJKLMNOPQRSTUVWXYZ">
-            <input type="checkbox" name="uppercase" id="uppercase">
+            <input type="checkbox" name="uppercase" id="uppercase" checked>
             <label for="uppercase">Uppercase</label>
           </div>
           <div data-chars="0123456789">
-            <input type="checkbox" name="numbers" id="numbers">
+            <input type="checkbox" name="numbers" id="numbers" checked>
             <label for="numbers">Numbers</label>
           </div>
           <div data-chars="!#$%&*+-_">
@@ -61,7 +62,7 @@
         <h3>Password Length</h3>
         <div id="length-form">
           <input type="number" id="pswd-length" name="pswd-length" min="8" max ="128" value="8">
-          <label for="pswd-length">Password Length (8 <= L <= 128)</label>
+          <label for="pswd-length">Length (8 <= L <= 128)</label>
         </div>
       </div>
 
@@ -73,6 +74,7 @@
           <textarea
             readonly
             id="all-passwords"
+            class="pass-text"
             placeholder="Generated Passwords"
             aria-label="Generated Passwords"
           ></textarea>
