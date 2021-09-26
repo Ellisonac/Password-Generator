@@ -2,13 +2,12 @@
 var generateBtn = document.querySelector("#generate");
 
 // Collection of valid characters for each type, keys are equal to checkbox IDs
-// Todo add "crazy character" sets
 var charSets = {
   lowercase: "abcdefghijklmnopqrstuvwxyz",
   uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
   numbers: "0123456789",
-  special: "!#$%&*+-_",
-  kanji: kanji.substr(Math.floor(Math.random()*(kanji.length-20)),20)
+  special: " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
+  kanji: kanji.substr(Math.floor(Math.random()*(kanji.length-20)),20),
 };
 
 // Create and default password length
@@ -24,10 +23,10 @@ function writePassword() {
 
   function getTypes() {
     // Getting desired types of characters to include
-    var chars = ""
+    var chars = "";
     for (const key in charSets) {
       if (document.getElementById(key).checked) {
-        chars = chars + charSets[key]
+        chars = chars + charSets[key];
       }
     }
     return chars
@@ -37,6 +36,7 @@ function writePassword() {
   var chars = getTypes();
   pswdLength = document.getElementById("pswd-length").value;
 
+  // Main function to create output password string of desired length and type
   function generatePassword() {
 
     // Input validation checks that length is in range and at least one type is selected
@@ -48,6 +48,7 @@ function writePassword() {
       return "Invalid Input: length out of range."
     }
 
+    // Create password by pulling random characters from total character set
     let pswd = "";
     for (let ii = 0; ii < pswdLength; ii++) {
       pswd = pswd + chars[Math.floor(Math.random() * chars.length)]
@@ -56,6 +57,7 @@ function writePassword() {
     return pswd
   }
 
+  
   // Adding previous password to list if is valid
   if ((password) && (!password.includes("Invalid Input:"))) {
     prevPasswords.push(password)
@@ -71,7 +73,8 @@ function writePassword() {
   password = generatePassword();
 
   passwordText.value = password;
-  passwordText.select();
+
+  if ((password) && (!password.includes("Invalid Input:"))) {passwordText.select(); }
 }
 
 // Error shake on input form if user input is invalid

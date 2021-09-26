@@ -9,6 +9,7 @@
   </head>
   <body>
     <div class="wrapper">
+      <!-- Main output and button form -->
       <header>
         <h1>Password Generator</h1>
       </header>
@@ -49,7 +50,7 @@
             <input type="checkbox" name="numbers" id="numbers" checked>
             <label for="numbers">Numbers</label>
           </div>
-          <div data-chars="!#$%&*+-_">
+          <div data-chars=" !#$%&'()*+,-./:;<=>?@[\]^_`{|}~">
             <input type="checkbox" name="special" id="special">
             <label for="special">Special</label>
           </div>
@@ -66,6 +67,7 @@
         </div>
       </div>
 
+      <!-- Previous passwords tracker -->
       <div class="card" id="prev-passwords">
         <div class="card-header">
           <h2>Previous Passwords</h2>
