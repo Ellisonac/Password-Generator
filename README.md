@@ -17,4 +17,4 @@ See the deployed site at: [Password Generator](https://ellisonac.github.io/Passw
 
 
 Capture of the final application:
-![Screenshot of final password generation user form](./assets/final.png)
+![Screenshot of final password generation user form](./Assets/final.png)
